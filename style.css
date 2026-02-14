@@ -10,7 +10,7 @@ body {
 }
 
 /* Dark overlay for better readability */
-body::before {
+/*body::before {
     content: "";
     position: fixed;
     top: 0;
@@ -19,7 +19,7 @@ body::before {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     z-index: -1;
-}
+}*/
 
 /* Layout */
 .container {
