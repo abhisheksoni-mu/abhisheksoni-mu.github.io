@@ -1,0 +1,51 @@
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Background */
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.text-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.image-section {
+    flex: 1;
+    text-align: right;
+    min-width: 250px;
+}
+
+.image-section img {
+    width: 250px;
+    border-radius: 50%;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-section {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+</style>
