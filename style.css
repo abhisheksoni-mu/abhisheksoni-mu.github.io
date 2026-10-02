@@ -1,66 +1,227 @@
-/* Reset default margin */
+/* ---------- Design tokens ---------- */
+:root {
+  --paper: #f5f6f9;
+  --ink: #1a2233;
+  --muted: #5b6578;
+  --rule: #d5dae3;
+  --accent: #2c3e9e;
+  --accent-soft: #e8ebf8;
+  --grid: rgba(44, 62, 158, 0.09);
+
+  --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12151d;
+    --ink: #e6e9f2;
+    --muted: #9aa3b5;
+    --rule: #2a3040;
+    --accent: #93a5ff;
+    --accent-soft: #1b2133;
+    --grid: rgba(147, 165, 255, 0.09);
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #12151d;
+  --ink: #e6e9f2;
+  --muted: #9aa3b5;
+  --rule: #2a3040;
+  --accent: #93a5ff;
+  --accent-soft: #1b2133;
+  --grid: rgba(147, 165, 255, 0.09);
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-image: url("mucoverpage.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: black;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Layout */
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px;
-    flex-wrap: wrap;
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 4rem 1.5rem 2.5rem;
+  isolation: isolate;
 }
 
-/* Left text */
-.text-section {
-    flex: 1;
-    min-width: 300px;
+/* Faint graph-paper grid that fades out toward the edges */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: center top;
+  -webkit-mask-image: radial-gradient(ellipse 60% 85% at 50% 40%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 60% 85% at 50% 40%, #000 20%, transparent 75%);
 }
 
-.text-section h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+.hero img {
+  display: block;
+  margin: 0 auto 1.5rem;
+  width: 160px;
+  height: 160px;
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--paper);
+  box-shadow: 0 0 0 1px var(--rule), 0 12px 32px -12px rgba(26, 34, 51, 0.35);
 }
 
-.text-section p {
-    font-size: 1.3rem;
-    opacity: 0.9;
+h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.25rem, 7vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
-/* Right image */
-.image-section {
-    flex: 1;
-    text-align: right;
-    min-width: 250px;
+/* ---------- Main column ---------- */
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
 }
 
-.image-section img {
-    width: 250px;
-    border-radius: 50%;
-    border: 3px solid white;
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--rule);
+  margin: 2.5rem 0;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-        padding: 50px 20px;
-    }
+/* The hero's rule and any back-to-back rules (e.g. around the commented-out section) */
+.hero + hr,
+hr + hr {
+  display: none;
+}
 
-    .image-section {
-        text-align: center;
-        margin-top: 30px;
-    }
+h2 {
+  margin: 0 0 1rem;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.625rem;
+  line-height: 1.25;
+  color: var(--ink);
+}
 
-    .image-section img {
-        width: 200px;
-    }
+p {
+  margin: 0;
+}
+
+/* Intro paragraph: the greeting reads as a lead line */
+main > p:first-child::first-line {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+main > p:first-child {
+  color: var(--muted);
+}
+
+/* ---------- Interests ---------- */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.625rem;
+}
+
+li {
+  padding: 0.55rem 0.9rem;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.975rem;
+  line-height: 1.5;
+}
+
+/* ---------- Links & contact ---------- */
+a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+a[href^="mailto:"] {
+  display: inline-block;
+  padding: 0.55rem 1.4rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+a[href^="mailto:"]:hover {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Footer ---------- */
+.thanks {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.updated {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
+  .hero {
+    padding-top: 2.75rem;
+  }
+  hr {
+    margin: 2rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }
