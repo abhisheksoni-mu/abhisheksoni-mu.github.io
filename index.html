@@ -1,70 +1,110 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Personal Homepage</title>
-<link rel="icon" type="image/png" href="mpp.png">
-<link rel="stylesheet" href="style.css">
-</head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abhishek Soni | Personal Homepage</title>
+
+    <meta name="description"
+          content="Personal homepage of Abhishek Soni — Mathematics, Research, Designing and Editing.">
+
+    <meta name="theme-color" content="#f8f7f3">
+
+    <!-- Profile picture as favicon -->
+    <link rel="icon" type="image/png" href="mpp.png">
+    <link rel="apple-touch-icon" href="mpp.png">
+
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
+    <main class="page">
 
-<header class="hero">
-<img src="mpp.png" alt="Profile" width="160" height="160">
-<h1>Abhishek Soni</h1>
-</header>
+        <!-- Profile Picture -->
+        <div class="profile">
+            <img
+                src="mpp.png"
+                alt="Abhishek Soni's profile picture"
+                width="120"
+                height="120"
+            >
+        </div>
 
-<hr>
+        <!-- Introduction -->
+        <header class="intro">
+            <p class="overline">PERSONAL HOMEPAGE <span>/ 001</span></p>
 
-<main>
+            <h1>Hello<span class="accent">...!</span></h1>
 
-<p>
-Hello...!
-    <br> I am passionate about Mathematics, Research, Designing and Editing.
-    <br> At present, I am pursuing MSc BEd (Innovative) Mathematics at the Central University of Rajasthan, India.
-</p>
+            <p class="statement">
+                I am passionate about Mathematics, Research,
+                Designing and Editing.
+            </p>
 
-<hr>
+            <p class="bio">
+                At present, I am pursuing MSc BEd (Innovative)
+                Mathematics at the Central University of Rajasthan, India.
+            </p>
+        </header>
 
-<h2>Interests</h2>
+        <div class="divider"></div>
 
-<ul>
-<li>Mathematics</li>
-<li>LaTeX &amp; MATLAB</li>
-<li>Python &amp; MySQL</li>
-<li>Video Editing, Animation &amp; VFX</li>
-<li>Blender (3D), GIMP, Inkscape</li>
-</ul>
+        <!-- Interests -->
+        <section class="section" id="interests">
+            <div class="section-heading">
+                <span class="section-number">01</span>
+                <h2>Interests<span class="accent">.</span></h2>
+            </div>
 
-<hr>
+            <ul class="interests">
+                <li><span class="bullet">—</span> Mathematics</li>
+                <li><span class="bullet">—</span> LaTeX &amp; MATLAB</li>
+                <li><span class="bullet">—</span> Python &amp; MySQL</li>
+                <li><span class="bullet">—</span> Video Editing, Animation &amp; VFX</li>
+                <li><span class="bullet">—</span> Blender, GIMP, Inkscape</li>
+            </ul>
+        </section>
 
-<!--
-<section id="answers">
-  <h2>Mathematical Answers</h2>
-  <div class="answer-card">
-    <h3>Understanding Prime Numbers</h3>
-    <p>A polished mathematical explanation with downloadable PDF and image format.</p>
-    <a href="/answers/prime-numbers-introduction/">View Answer</a>
-  </div>
-</section>
--->
-    
-<hr>
+        <div class="divider"></div>
 
-<h2>Contact</h2>
+        <!-- Contact -->
+        <section class="section" id="contact">
+            <div class="section-heading">
+                <span class="section-number">02</span>
+                <h2>Contact<span class="accent">.</span></h2>
+            </div>
 
-<a href="mailto:soni3abhishek@gmail.com">Email</a>
+            <a class="email" href="mailto:soni3abhishek@gmail.com">
+                <span>soni3abhishek@gmail.com</span>
+                <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+        </section>
 
-<hr>
+        <!-- Footer -->
+        <footer>
+            <p class="thanks">
+                Thanks for visiting<span class="accent">...!</span>
+            </p>
 
-<p class="thanks"><i>Thanks for visiting...!</i></p>
+            <div class="footer-divider"></div>
 
-<p class="updated">
-   Last Updated - Friday, October 2, 14:07 Hrs. (IST)
-</p>
+            <div class="footer-info">
+                <span class="author">Abhishek Soni</span>
 
-</main>
+                <p class="updated">
+                    Last Updated — Sunday, October 11, 2026<br>
+                    at 18:23 Hrs. (IST)
+                </p>
+            </div>
 
+            <p class="end-mark">
+                END OF PAGE <span>■</span>
+            </p>
+        </footer>
+
+    </main>
 </body>
 </html>
