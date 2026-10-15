@@ -1,342 +1,292 @@
-/* =========================================
+/* =====================================
    ABHISHEK SONI — PERSONAL HOMEPAGE
-   Minimal, elegant, and readable
-   ========================================= */
+   Minimalist / Typewriter / Academic
+===================================== */
 
-/* ---------- Colour palette & fonts ---------- */
+/* Colour palette and typography */
 
 :root {
-    color-scheme: light;
-
     --paper: #f8f7f3;
     --ink: #292d32;
     --muted: #777b80;
     --blue: #426b8c;
     --line: #deded7;
 
-    --body-font: -apple-system, BlinkMacSystemFont,
-                 "Segoe UI", Arial, sans-serif;
-
-    --mono-font: "SFMono-Regular", Consolas,
-                 "Liberation Mono", monospace;
+    /* System fonts only — no external imports */
+    --typewriter: "Courier New", Courier, monospace;
 }
 
-/* ---------- Basic reset ---------- */
+/* Reset */
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-    color-scheme: light;
     scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-
-    background-color: var(--paper);
+    background: var(--paper);
     color: var(--ink);
-
-    font-family: var(--body-font);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.85;
-
+    font-family: var(--typewriter);
+    font-size: 14px;
+    line-height: 1.9;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
 }
 
-/* ---------- Main page layout ---------- */
+/* Main layout */
 
-main {
-    width: 100%;
-    max-width: 700px;
+.page {
+    width: min(100% - 48px, 660px);
     margin: 0 auto;
-    padding: 64px 28px 36px;
+    padding: 75px 0 35px;
 }
 
-/* ---------- Small introductory label ---------- */
-
-.overline {
-    margin: 0 0 22px;
-
-    color: var(--muted);
-    font-family: var(--mono-font);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    line-height: 1.6;
-    text-transform: uppercase;
-}
-
-/* ---------- Profile picture ---------- */
+/* Profile picture */
 
 .profile {
+    margin-bottom: 30px;
+}
+
+.profile img {
+    display: block;
     width: 104px;
     height: 104px;
-    margin: 0 0 30px;
-
-    border: 1px solid var(--line);
-    border-radius: 50%;
-
     object-fit: cover;
-    object-position: center;
-
-    display: block;
+    border-radius: 50%;
+    border: 1px solid var(--line);
 }
 
-/* ---------- Main heading ---------- */
+/* Introduction */
+
+.overline {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 32px;
+}
+
+.overline span {
+    color: var(--blue);
+}
 
 h1 {
-    margin: 0 0 24px;
-
-    color: var(--ink);
-    font-family: var(--body-font);
-    font-size: clamp(36px, 6vw, 44px);
-    font-weight: 500;
-    letter-spacing: -1.5px;
-    line-height: 1.2;
+    font-size: clamp(36px, 7vw, 48px);
+    font-weight: 400;
+    letter-spacing: -3px;
+    line-height: 1.4;
+    margin-bottom: 24px;
 }
 
-/* ---------- Introductory statement ---------- */
+.accent {
+    color: var(--blue);
+}
 
 .statement {
-    margin: 0 0 16px;
-
-    color: var(--ink);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.8;
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 15px;
 }
-
-/* ---------- Biography ---------- */
 
 .bio {
-    margin: 0 0 36px;
-
-    color: #62666b;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.9;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 2;
+    max-width: 560px;
 }
 
-/* ---------- Section headings ---------- */
+/* Horizontal dividers */
 
-section {
-    margin: 0 0 34px;
+.divider {
+    width: 100%;
+    height: 1px;
+    background: var(--line);
+    margin: 42px 0;
+}
+
+/* Section headings */
+
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 17px;
+    margin-bottom: 22px;
+}
+
+.section-number {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1px;
 }
 
 h2 {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-
-    margin: 0 0 17px;
-
-    color: var(--ink);
-    font-family: var(--body-font);
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-    line-height: 1.5;
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: -0.7px;
 }
 
-/* Section numbers */
-
-.section-number {
-    color: var(--blue);
-    font-family: var(--mono-font);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0;
-}
-
-/* ---------- Interests list ---------- */
+/* Interests */
 
 .interests {
-    margin: 0;
-    padding: 0;
     list-style: none;
+    padding-left: 0;
 }
 
 .interests li {
-    position: relative;
-
-    margin: 0;
-    padding: 7px 0 7px 19px;
-
-    color: var(--ink);
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.75;
+    display: flex;
+    align-items: baseline;
+    gap: 13px;
+    padding: 7px 0;
+    font-size: 13px;
 }
 
-/* Small, understated list markers */
-
-.interests li::before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    top: 7px;
-
-    color: var(--muted);
+.bullet {
+    color: var(--blue);
+    flex-shrink: 0;
 }
 
-/* ---------- Contact section ---------- */
+/* Contact */
 
 .email {
-    display: inline-block;
-
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
     color: var(--blue);
-    font-size: 15px;
-    font-weight: 500;
     text-decoration: none;
-
+    overflow-wrap: anywhere;
     border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
-
-    transition: border-color 180ms ease,
-                color 180ms ease;
+    transition: border-color 0.2s ease;
 }
 
 .email:hover {
-    color: var(--ink);
-    border-bottom-color: var(--ink);
+    border-bottom-color: var(--blue);
 }
 
-.email:focus-visible {
-    outline: 2px solid var(--blue);
-    outline-offset: 4px;
-    border-radius: 2px;
+.arrow {
+    transition: transform 0.2s ease;
 }
 
-/* ---------- Closing message ---------- */
-
-.thanks {
-    margin: 38px 0 30px;
-
-    color: var(--muted);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.8;
+.email:hover .arrow {
+    transform: translate(2px, -2px);
 }
 
-/* ---------- Horizontal divider ---------- */
-
-hr,
-.divider {
-    height: 1px;
-    margin: 30px 0 22px;
-
-    background: var(--line);
-    border: 0;
-}
-
-/* ---------- Footer ---------- */
+/* Footer */
 
 footer {
-    padding-top: 4px;
+    margin-top: 75px;
+}
+
+.thanks {
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--line);
+    margin-bottom: 20px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 .author {
-    margin: 0 0 8px;
-
+    font-size: 11px;
     color: var(--ink);
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.7;
 }
 
 .updated {
-    margin: 0;
-
     color: var(--muted);
-    font-family: var(--mono-font);
     font-size: 10px;
-    font-weight: 400;
-    line-height: 1.8;
+    line-height: 1.9;
+    text-align: right;
 }
 
 .end-mark {
-    margin-top: 20px;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin-top: 35px;
+}
 
+.end-mark span {
     color: var(--blue);
-    font-family: var(--mono-font);
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 8px;
 }
 
-/* ---------- Text selection ---------- */
+/* Keyboard accessibility */
 
-::selection {
-    background: #dce6ec;
-    color: #292d32;
+a:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 5px;
 }
 
-/* ---------- Responsive layout: tablets ---------- */
+/* Mobile devices */
 
-@media (max-width: 600px) {
-    main {
-        padding: 48px 24px 30px;
+@media (max-width: 480px) {
+    .page {
+        width: calc(100% - 40px);
+        padding-top: 50px;
     }
 
     .profile {
-        width: 92px;
-        height: 92px;
-        margin-bottom: 26px;
+        margin-bottom: 25px;
     }
 
-    h1 {
-        font-size: clamp(34px, 8vw, 40px);
-        letter-spacing: -1.1px;
+    .profile img {
+        width: 88px;
+        height: 88px;
+    }
+
+    .overline {
+        margin-bottom: 25px;
     }
 
     .statement {
-        font-size: 15.5px;
-    }
-
-    .bio {
-        font-size: 15px;
-    }
-
-    h2 {
-        font-size: 17px;
-    }
-}
-
-/* ---------- Responsive layout: small phones ---------- */
-
-@media (max-width: 360px) {
-    main {
-        padding: 36px 19px 24px;
-    }
-
-    .profile {
-        width: 84px;
-        height: 84px;
-    }
-
-    h1 {
-        font-size: 33px;
-        letter-spacing: -0.8px;
-    }
-
-    .statement,
-    .bio,
-    .interests li,
-    .email {
         font-size: 14px;
     }
 
+    .bio {
+        font-size: 12px;
+    }
+
+    .divider {
+        margin: 32px 0;
+    }
+
+    .section-heading {
+        gap: 12px;
+    }
+
+    .interests li {
+        font-size: 12px;
+        gap: 10px;
+    }
+
+    footer {
+        margin-top: 55px;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        gap: 12px;
+    }
+
     .updated {
-        font-size: 9px;
-        overflow-wrap: anywhere;
+        text-align: left;
     }
 }
 
-/* ---------- Respect reduced-motion preferences ---------- */
+/* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -346,8 +296,59 @@ footer {
     *,
     *::before,
     *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+        transition: none !important;
     }
+}
+
+
+
+/* Improved readability */
+
+.statement {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.bio {
+    font-size: 14px;
+    font-weight: 500;
+    color: #62666b;
+}
+
+.interests li {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.email {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.overline,
+.section-number,
+.updated,
+.author,
+.end-mark {
+    font-weight: 600;
+}
+
+.thanks {
+    font-weight: 600;
+}
+
+
+/* Keep the homepage in light mode */
+
+:root {
+    color-scheme: light;
+}
+
+html {
+    color-scheme: light;
+}
+
+body {
+    background-color: #f8f7f3;
+    color: #292d32;
 }
