@@ -1,316 +1,320 @@
-/* =====================================
-ABHISHEK SONI — PERSONAL HOMEPAGE
-Minimalist / Typewriter / Academic
-===================================== */
+/* ==========================================
+   PERSONAL HOMEPAGE
+   Author: Abhishek Soni
+   Typography: CMU Serif
+   ========================================== */
 
-/* Colour palette and typography */
 
-:root {
---paper: #f8f7f3;
---ink: #292d32;
---muted: #777b80;
---blue: #426b8c;
---line: #deded7;
+/* 1. Local Computer Modern Unicode fonts */
 
-/* System fonts only — no external imports */
---typewriter: "Courier New", Courier, monospace;
+@font-face {
+    font-family: "CMU Serif";
+    src: url("fonts/cmu-serif-500-roman.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
-/* Reset */
+@font-face {
+    font-family: "CMU Serif";
+    src: url("fonts/cmu-serif-500-italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
 
-• {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+@font-face {
+    font-family: "CMU Serif";
+    src: url("fonts/cmu-serif-700-roman.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "CMU Serif";
+    src: url("fonts/cmu-serif-700-italic.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* 2. Global design settings */
+
+:root {
+    color-scheme: light;
+
+    --background: #ffffff;
+    --text: #252525;
+    --muted: #707070;
+    --accent: #315d78;
+    --border: #e7e7e7;
+
+    --content-width: 700px;
+    --side-padding: 24px;
+}
+
+
+/* 3. Reset and base styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-scroll-behavior: smooth;
+    background: var(--background);
+    scroll-behavior: smooth;
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
-background: var(--paper);
-color: var(--ink);
-font-family: var(--typewriter);
-font-size: 14px;
-line-height: 1.9;
--webkit-font-smoothing: antialiased;
+    background: var(--background);
+    color: var(--text);
+
+    font-family: "CMU Serif", Georgia, serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+
+    font-synthesis: none;
+    font-kerning: normal;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Main layout */
 
-.page {
-width: min(100% - 48px, 660px);
-margin: 0 auto;
-padding: 75px 0 35px;
+/* 4. Links and keyboard accessibility */
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    text-underline-offset: 4px;
 }
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+
+/* 5. Main content */
+
+.container {
+    width: calc(100% - 2 * var(--side-padding));
+    max-width: var(--content-width);
+
+    margin: 0 auto;
+
+    padding-top: 80px;
+    padding-bottom: 32px;
+}
+
+
+/* 6. Introduction */
+
+.intro {
+    margin-bottom: 58px;
+}
+
 
 /* Profile picture */
 
-.profile {
-margin-bottom: 30px;
+.profile-picture {
+    display: block;
+
+    width: 120px;
+    height: 120px;
+
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+
+    margin-bottom: 28px;
 }
 
-.profile img {
-display: block;
-width: 104px;
-height: 104px;
-object-fit: cover;
-border-radius: 50%;
-border: 1px solid var(--line);
+
+/* Greeting */
+
+.greeting {
+    color: var(--accent);
+    font-size: 16px;
+    line-height: 1.6;
+
+    margin-bottom: 8px;
 }
 
-/* Introduction */
 
-.overline {
-color: var(--muted);
-font-size: 10px;
-letter-spacing: 2px;
-margin-bottom: 32px;
-}
-
-.overline span {
-color: var(--blue);
-}
+/* Name */
 
 h1 {
-font-size: clamp(36px, 7vw, 48px);
-font-weight: 400;
-letter-spacing: -3px;
-line-height: 1.4;
-margin-bottom: 24px;
+    color: var(--text);
+
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.7px;
+
+    margin-bottom: 20px;
 }
 
-.accent {
-color: var(--blue);
+
+/* Personal introduction */
+
+.tagline {
+    font-size: 19px;
+    line-height: 1.75;
+
+    margin-bottom: 14px;
 }
 
-.statement {
-font-size: 15px;
-line-height: 2;
-margin-bottom: 15px;
+.education {
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
 }
 
-.bio {
-color: var(--muted);
-font-size: 13px;
-line-height: 2;
-max-width: 560px;
-}
 
-/* Horizontal dividers */
+/* 7. Content sections */
 
-.divider {
-width: 100%;
-height: 1px;
-background: var(--line);
-margin: 42px 0;
-}
-
-/* Section headings */
-
-.section-heading {
-display: flex;
-align-items: baseline;
-gap: 17px;
-margin-bottom: 22px;
-}
-
-.section-number {
-color: var(--muted);
-font-size: 10px;
-letter-spacing: 1px;
+.section {
+    margin-bottom: 44px;
 }
 
 h2 {
-font-size: 19px;
-font-weight: 400;
-letter-spacing: -0.7px;
+    color: var(--text);
+
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.5;
+
+    margin-bottom: 18px;
 }
 
-/* Interests */
 
-.interests {
-list-style: none;
-padding-left: 0;
+/* Subtle blue underline */
+
+h2::after {
+    content: "";
+
+    display: block;
+
+    width: 30px;
+    height: 1px;
+
+    background: var(--accent);
+
+    margin-top: 9px;
 }
 
-.interests li {
-display: flex;
-align-items: baseline;
-gap: 13px;
-padding: 7px 0;
-font-size: 13px;
+
+/* 8. Interests list */
+
+.interests-list {
+    list-style: none;
 }
 
-.bullet {
-color: var(--blue);
-flex-shrink: 0;
+.interests-list li {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
 }
 
-/* Contact */
+.interests-list li:last-child {
+    border-bottom: none;
+}
+
+
+/* 9. Email contact */
 
 .email {
-display: inline-flex;
-align-items: center;
-flex-wrap: wrap;
-gap: 10px;
-color: var(--blue);
-text-decoration: none;
-overflow-wrap: anywhere;
-border-bottom: 1px solid transparent;
-transition: border-color 0.2s ease;
-}
+    display: inline-block;
 
-.email:hover {
-border-bottom-color: var(--blue);
+    font-size: 16px;
+    overflow-wrap: anywhere;
 }
 
 .arrow {
-transition: transform 0.2s ease;
+    display: inline-block;
+    margin-left: 4px;
 }
 
-.email:hover .arrow {
-transform: translate(2px, -2px);
-}
 
-/* Footer */
+/* 10. Footer */
 
 footer {
-margin-top: 75px;
+    margin-top: 66px;
+    padding-top: 22px;
+
+    border-top: 1px solid var(--border);
 }
 
 .thanks {
-font-size: 16px;
-margin-bottom: 28px;
-}
-
-.footer-divider {
-width: 100%;
-height: 1px;
-background: var(--line);
-margin-bottom: 20px;
-}
-
-.footer-info {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-gap: 20px;
-}
-
-.author {
-font-size: 11px;
-color: var(--ink);
+    font-size: 16px;
+    margin-bottom: 8px;
 }
 
 .updated {
-color: var(--muted);
-font-size: 10px;
-line-height: 1.9;
-text-align: right;
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.8;
 }
 
-.end-mark {
-color: var(--muted);
-font-size: 9px;
-letter-spacing: 1.5px;
-margin-top: 35px;
+
+/* 11. Smaller screens */
+
+@media (max-width: 600px) {
+    :root {
+        --side-padding: 20px;
+    }
+
+    .container {
+        padding-top: 52px;
+        padding-bottom: 24px;
+    }
+
+    .profile-picture {
+        width: 104px;
+        height: 104px;
+        margin-bottom: 24px;
+    }
+
+    .intro {
+        margin-bottom: 44px;
+    }
+
+    h1 {
+        font-size: 36px;
+        letter-spacing: -0.4px;
+    }
+
+    .tagline {
+        font-size: 18px;
+    }
+
+    .section {
+        margin-bottom: 36px;
+    }
+
+    footer {
+        margin-top: 48px;
+    }
 }
 
-.end-mark span {
-color: var(--blue);
-font-size: 8px;
-}
 
-/* Keyboard accessibility */
-
-a:focus-visible {
-outline: 2px solid var(--blue);
-outline-offset: 5px;
-}
-
-/* Mobile devices */
-
-@media (max-width: 480px) {
-.page {
-width: calc(100% - 40px);
-padding-top: 50px;
-}
-
-.profile {
-margin-bottom: 25px;
-}
-
-.profile img {
-width: 88px;
-height: 88px;
-}
-
-.overline {
-margin-bottom: 25px;
-}
-
-.statement {
-font-size: 14px;
-}
-
-.bio {
-font-size: 12px;
-}
-
-.divider {
-margin: 32px 0;
-}
-
-.section-heading {
-gap: 12px;
-}
-
-.interests li {
-font-size: 12px;
-gap: 10px;
-}
-
-footer {
-margin-top: 55px;
-}
-
-.footer-info {
-flex-direction: column;
-gap: 12px;
-}
-
-.updated {
-text-align: left;
-}
-}
-
-/* Reduced motion */
+/* 12. Reduced motion accessibility */
 
 @media (prefers-reduced-motion: reduce) {
-html {
-scroll-behavior: auto;
-}
-
-*,
-*::before,
-*::after {
-transition: none !important;
-}
-}
-
-/* Keep the homepage in light mode */
-
-:root {
-color-scheme: light;
-}
-
-html {
-color-scheme: light;
-}
-
-body {
-background-color: #f8f7f3;
-color: #292d32;
+    html {
+        scroll-behavior: auto;
+    }
 }
