@@ -59,35 +59,7 @@ body::before {
 
 
 /* =========================================
-   3. FIXED TEXT AND SOCIAL COLOURS
-========================================= */
-
-body,
-.profile-section h1,
-.about-section h2,
-.social-section h2,
-.tagline,
-.about-section p,
-.footer-dates,
-.social-button,
-.social-button span,
-.social-icon {
-    color: #000000 !important;
-}
-
-.social-button {
-    border-color: rgba(0, 0, 0, 0.45);
-    background: transparent;
-}
-
-.social-button:hover {
-    background: rgba(255, 255, 255, 0.22);
-    border-color: rgba(0, 0, 0, 0.85);
-}
-
-
-/* =========================================
-   4. MAIN PAGE CONTAINER
+   5. MAIN PAGE CONTAINER
 ========================================= */
 
 .page-container {
@@ -107,7 +79,7 @@ body,
 
 
 /* =========================================
-   5. MAIN CONTENT
+   6. MAIN CONTENT
 ========================================= */
 
 .main-content {
@@ -121,7 +93,7 @@ body,
 
 
 /* =========================================
-   6. PROFILE SECTION
+   7. PROFILE SECTION
 ========================================= */
 
 .profile-section {
@@ -167,7 +139,7 @@ body,
 
 
 /* =========================================
-   7. ABOUT SECTION
+   8. ABOUT SECTION
 ========================================= */
 
 .about-section {
@@ -210,7 +182,7 @@ body,
 
 
 /* =========================================
-   8. SOCIAL MEDIA SECTION
+   9. SOCIAL MEDIA SECTION
 ========================================= */
 
 .social-section {
@@ -276,6 +248,7 @@ body,
     flex-shrink: 0;
 }
 
+
 .social-button:hover {
     transform: translateY(-2px);
 }
@@ -287,7 +260,7 @@ body,
 
 
 /* =========================================
-   9. FOOTER
+   10. FOOTER
 ========================================= */
 
 .footer {
@@ -335,7 +308,7 @@ body,
 
 
 /* =========================================
-   10. TABLET RESPONSIVENESS
+   11. TABLET RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 768px) {
@@ -361,7 +334,7 @@ body,
 
 
 /* =========================================
-   11. MOBILE RESPONSIVENESS
+   12. MOBILE RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 480px) {
@@ -446,7 +419,7 @@ body,
 
 
 /* =========================================
-   12. REDUCED MOTION ACCESSIBILITY
+   13. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
