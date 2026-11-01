@@ -26,20 +26,18 @@ body {
         Arial,
         sans-serif;
 
+    color: #ffffff;
     line-height: 1.7;
 
-    background: transparent;
+    background: #10141c;
 
     position: relative;
     isolation: isolate;
-
-    color-scheme: light;
-    color: #000000;
 }
 
 
 /* =========================================
-   2. ORIGINAL FIXED BACKGROUND
+   2. FIXED BACKGROUND IMAGE
 ========================================= */
 
 body::before {
@@ -51,7 +49,6 @@ body::before {
     z-index: -1;
 
     background-image: url("mucoverpage.jpg");
-
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -59,7 +56,7 @@ body::before {
 
 
 /* =========================================
-   5. MAIN PAGE CONTAINER
+   3. MAIN PAGE CONTAINER
 ========================================= */
 
 .page-container {
@@ -71,7 +68,7 @@ body::before {
 
     margin: 0 auto;
 
-    padding: 65px 35px 20px;
+    padding: 65px 35px 25px;
 
     display: flex;
     flex-direction: column;
@@ -79,7 +76,7 @@ body::before {
 
 
 /* =========================================
-   6. MAIN CONTENT
+   4. MAIN CONTENT
 ========================================= */
 
 .main-content {
@@ -93,7 +90,7 @@ body::before {
 
 
 /* =========================================
-   7. PROFILE SECTION
+   5. PROFILE SECTION
 ========================================= */
 
 .profile-section {
@@ -112,7 +109,8 @@ body::before {
 
     border: 3px solid rgba(255, 255, 255, 0.85);
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35);
 
     margin-bottom: 22px;
 }
@@ -135,19 +133,22 @@ body::before {
     font-weight: 400;
 
     letter-spacing: 1px;
+
+    color: rgba(255, 255, 255, 0.85);
 }
 
 
 /* =========================================
-   8. ABOUT SECTION
+   6. ABOUT SECTION
 ========================================= */
 
 .about-section {
-    padding: 0;
+    padding: 30px 34px;
 
     margin-bottom: 35px;
 
     background: transparent;
+
     border: none;
     border-radius: 0;
 
@@ -171,6 +172,8 @@ body::before {
 
     font-weight: 400;
 
+    color: rgba(255, 255, 255, 0.91);
+
     margin-bottom: 15px;
 
     text-align: justify;
@@ -182,7 +185,7 @@ body::before {
 
 
 /* =========================================
-   9. SOCIAL MEDIA SECTION
+   7. SOCIAL MEDIA SECTION
 ========================================= */
 
 .social-section {
@@ -206,11 +209,8 @@ body::before {
     gap: 10px;
 }
 
-
-/* Compact social buttons */
-
 .social-button {
-    min-width: 96px;
+    min-width: 95px;
 
     display: inline-flex;
 
@@ -219,16 +219,20 @@ body::before {
 
     gap: 7px;
 
-    padding: 7px 12px;
+    padding: 8px 13px;
+
+    color: #ffffff;
 
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
 
-    border: 1px solid;
+    background: rgba(255, 255, 255, 0.08);
 
-    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.30);
+
+    border-radius: 7px;
 
     transition:
         background 0.25s ease,
@@ -236,31 +240,29 @@ body::before {
         transform 0.25s ease;
 }
 
-
-/* Actual social media icons */
-
-.social-icon {
-    width: 16px;
-    height: 16px;
-
-    display: block;
+.social-button svg {
+    width: 15px;
+    height: 15px;
 
     flex-shrink: 0;
 }
 
-
 .social-button:hover {
+    background: rgba(255, 255, 255, 0.18);
+
+    border-color: rgba(255, 255, 255, 0.75);
+
     transform: translateY(-2px);
 }
 
 .social-button:focus-visible {
-    outline: 2px solid currentColor;
+    outline: 2px solid #ffffff;
     outline-offset: 4px;
 }
 
 
 /* =========================================
-   10. FOOTER
+   8. FOOTER
 ========================================= */
 
 .footer {
@@ -276,17 +278,13 @@ body::before {
     gap: 20px;
 }
 
-
-/* Smaller footer text */
-
 .footer-dates {
     font-size: 10px;
 
-    line-height: 1.8;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.78);
 }
-
-
-/* Smaller signature */
 
 .signature-container {
     display: flex;
@@ -298,7 +296,7 @@ body::before {
 .signature {
     display: block;
 
-    width: 75px;
+    width: 80px;
     height: auto;
 
     object-fit: contain;
@@ -308,13 +306,13 @@ body::before {
 
 
 /* =========================================
-   11. TABLET RESPONSIVENESS
+   9. TABLET RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 768px) {
 
     .page-container {
-        padding: 55px 25px 20px;
+        padding: 55px 25px 22px;
     }
 
     .profile-section {
@@ -326,21 +324,24 @@ body::before {
         height: 135px;
     }
 
+    .about-section {
+        padding: 25px;
+    }
+
     .footer {
         margin-top: 60px;
     }
-
 }
 
 
 /* =========================================
-   12. MOBILE RESPONSIVENESS
+   10. MOBILE RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 480px) {
 
     .page-container {
-        padding: 40px 18px 18px;
+        padding: 40px 18px 20px;
     }
 
     .profile-section {
@@ -364,6 +365,8 @@ body::before {
     }
 
     .about-section {
+        padding: 22px 19px;
+
         margin-bottom: 30px;
     }
 
@@ -383,20 +386,18 @@ body::before {
     }
 
     .social-links {
-        gap: 8px;
+        gap: 10px;
     }
 
     .social-button {
-        min-width: 85px;
+        min-width: 90px;
 
-        padding: 7px 10px;
+        padding: 8px 11px;
 
-        gap: 6px;
-
-        font-size: 11px;
+        font-size: 12px;
     }
 
-    .social-icon {
+    .social-button svg {
         width: 14px;
         height: 14px;
     }
@@ -412,14 +413,13 @@ body::before {
     }
 
     .signature {
-        width: 60px;
+        width: 65px;
     }
-
 }
 
 
 /* =========================================
-   13. REDUCED MOTION ACCESSIBILITY
+   11. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -431,5 +431,4 @@ body::before {
     .social-button {
         transition: none;
     }
-
 }
