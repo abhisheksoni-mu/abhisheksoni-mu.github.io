@@ -59,7 +59,7 @@ body::before {
 
 
 /* =========================================
-   3. FIXED BLACK TEXT COLOUR
+   3. FIXED TEXT AND SOCIAL COLOURS
 ========================================= */
 
 body,
@@ -69,8 +69,10 @@ body,
 .tagline,
 .about-section p,
 .footer-dates,
-.social-button {
-    color: #000000;
+.social-button,
+.social-button span,
+.social-icon {
+    color: #000000 !important;
 }
 
 .social-button {
