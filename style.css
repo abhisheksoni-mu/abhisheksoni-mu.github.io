@@ -26,18 +26,19 @@ body {
         Arial,
         sans-serif;
 
-    color: #ffffff;
     line-height: 1.7;
 
-    background: #10141c;
+    background: transparent;
 
     position: relative;
     isolation: isolate;
+
+    color-scheme: light dark;
 }
 
 
 /* =========================================
-   2. FIXED BACKGROUND IMAGE
+   2. ORIGINAL FIXED BACKGROUND
 ========================================= */
 
 body::before {
@@ -46,36 +47,94 @@ body::before {
     position: fixed;
     inset: 0;
 
-    z-index: -2;
+    z-index: -1;
 
     background-image: url("mucoverpage.jpg");
+
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 
-/* Dark overlay for text readability */
+/* =========================================
+   3. LIGHT MODE
+========================================= */
 
-body::after {
-    content: "";
+@media (prefers-color-scheme: light) {
 
-    position: fixed;
-    inset: 0;
+    body {
+        color: #202020;
+    }
 
-    z-index: -1;
+    .profile-section h1,
+    .about-section h2,
+    .social-section h2 {
+        color: #171717;
+        text-shadow: 0 1px 5px rgba(255, 255, 255, 0.45);
+    }
 
-    background:
-        linear-gradient(
-            180deg,
-            rgba(8, 12, 20, 0.48),
-            rgba(8, 12, 20, 0.68)
-        );
+    .tagline,
+    .about-section p,
+    .footer-dates {
+        color: #292929;
+        text-shadow: 0 1px 4px rgba(255, 255, 255, 0.55);
+    }
+
+    .social-button {
+        color: #202020;
+        border-color: rgba(0, 0, 0, 0.45);
+        background: transparent;
+    }
+
+    .social-button:hover {
+        background: rgba(255, 255, 255, 0.22);
+        border-color: rgba(0, 0, 0, 0.85);
+    }
+
 }
 
 
 /* =========================================
-   3. MAIN PAGE CONTAINER
+   4. DARK MODE
+========================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        color: #ffffff;
+    }
+
+    .profile-section h1,
+    .about-section h2,
+    .social-section h2 {
+        color: #ffffff;
+        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+    }
+
+    .tagline,
+    .about-section p,
+    .footer-dates {
+        color: #f2f2f2;
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    }
+
+    .social-button {
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.55);
+        background: transparent;
+    }
+
+    .social-button:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.9);
+    }
+
+}
+
+
+/* =========================================
+   5. MAIN PAGE CONTAINER
 ========================================= */
 
 .page-container {
@@ -87,7 +146,7 @@ body::after {
 
     margin: 0 auto;
 
-    padding: 65px 35px 25px;
+    padding: 65px 35px 20px;
 
     display: flex;
     flex-direction: column;
@@ -95,7 +154,7 @@ body::after {
 
 
 /* =========================================
-   4. MAIN CONTENT
+   6. MAIN CONTENT
 ========================================= */
 
 .main-content {
@@ -109,7 +168,7 @@ body::after {
 
 
 /* =========================================
-   5. PROFILE SECTION
+   7. PROFILE SECTION
 ========================================= */
 
 .profile-section {
@@ -128,8 +187,7 @@ body::after {
 
     border: 3px solid rgba(255, 255, 255, 0.85);
 
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 
     margin-bottom: 22px;
 }
@@ -152,28 +210,24 @@ body::after {
     font-weight: 400;
 
     letter-spacing: 1px;
-
-    color: rgba(255, 255, 255, 0.85);
 }
 
 
 /* =========================================
-   6. ABOUT SECTION
+   8. ABOUT SECTION
 ========================================= */
 
 .about-section {
-    padding: 30px 34px;
+    padding: 0;
 
     margin-bottom: 35px;
 
-    background: rgba(10, 15, 24, 0.38);
+    background: transparent;
+    border: none;
+    border-radius: 0;
 
-    border: 1px solid rgba(255, 255, 255, 0.17);
-
-    border-radius: 14px;
-
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 .about-section h2,
@@ -192,8 +246,6 @@ body::after {
 
     font-weight: 400;
 
-    color: rgba(255, 255, 255, 0.91);
-
     margin-bottom: 15px;
 
     text-align: justify;
@@ -205,7 +257,7 @@ body::after {
 
 
 /* =========================================
-   7. SOCIAL MEDIA SECTION
+   9. SOCIAL MEDIA SECTION
 ========================================= */
 
 .social-section {
@@ -215,7 +267,7 @@ body::after {
 }
 
 .social-section h2 {
-    margin-bottom: 23px;
+    margin-bottom: 20px;
 }
 
 .social-links {
@@ -226,33 +278,32 @@ body::after {
 
     flex-wrap: wrap;
 
-    gap: 13px;
+    gap: 10px;
 }
 
+
+/* Compact social buttons */
+
 .social-button {
-    min-width: 115px;
+    min-width: 96px;
 
     display: inline-flex;
 
     justify-content: center;
     align-items: center;
 
-    gap: 9px;
+    gap: 7px;
 
-    padding: 10px 19px;
-
-    color: #ffffff;
+    padding: 7px 12px;
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
 
-    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid;
 
-    border: 1px solid rgba(255, 255, 255, 0.30);
-
-    border-radius: 8px;
+    border-radius: 6px;
 
     transition:
         background 0.25s ease,
@@ -260,27 +311,31 @@ body::after {
         transform 0.25s ease;
 }
 
-.social-symbol {
-    font-size: 16px;
-    font-weight: 600;
+
+/* Actual social media icons */
+
+.social-icon {
+    width: 16px;
+    height: 16px;
+
+    display: block;
+
+    flex-shrink: 0;
 }
 
+
 .social-button:hover {
-    background: rgba(255, 255, 255, 0.23);
-
-    border-color: rgba(255, 255, 255, 0.75);
-
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 .social-button:focus-visible {
-    outline: 2px solid #ffffff;
+    outline: 2px solid currentColor;
     outline-offset: 4px;
 }
 
 
 /* =========================================
-   8. FOOTER
+   10. FOOTER
 ========================================= */
 
 .footer {
@@ -296,13 +351,17 @@ body::after {
     gap: 20px;
 }
 
+
+/* Smaller footer text */
+
 .footer-dates {
-    font-size: 12px;
+    font-size: 10px;
 
-    line-height: 2;
-
-    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.8;
 }
+
+
+/* Smaller signature */
 
 .signature-container {
     display: flex;
@@ -314,7 +373,7 @@ body::after {
 .signature {
     display: block;
 
-    width: 115px;
+    width: 75px;
     height: auto;
 
     object-fit: contain;
@@ -324,13 +383,13 @@ body::after {
 
 
 /* =========================================
-   9. TABLET RESPONSIVENESS
+   11. TABLET RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 768px) {
 
     .page-container {
-        padding: 55px 25px 22px;
+        padding: 55px 25px 20px;
     }
 
     .profile-section {
@@ -342,24 +401,21 @@ body::after {
         height: 135px;
     }
 
-    .about-section {
-        padding: 25px;
-    }
-
     .footer {
         margin-top: 60px;
     }
+
 }
 
 
 /* =========================================
-   10. MOBILE RESPONSIVENESS
+   12. MOBILE RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 480px) {
 
     .page-container {
-        padding: 40px 18px 20px;
+        padding: 40px 18px 18px;
     }
 
     .profile-section {
@@ -383,8 +439,6 @@ body::after {
     }
 
     .about-section {
-        padding: 22px 19px;
-
         margin-bottom: 30px;
     }
 
@@ -404,15 +458,22 @@ body::after {
     }
 
     .social-links {
-        gap: 10px;
+        gap: 8px;
     }
 
     .social-button {
-        min-width: 105px;
+        min-width: 85px;
 
-        padding: 9px 13px;
+        padding: 7px 10px;
 
-        font-size: 13px;
+        gap: 6px;
+
+        font-size: 11px;
+    }
+
+    .social-icon {
+        width: 14px;
+        height: 14px;
     }
 
     .footer {
@@ -422,17 +483,18 @@ body::after {
     }
 
     .footer-dates {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .signature {
-        width: 85px;
+        width: 60px;
     }
+
 }
 
 
 /* =========================================
-   11. REDUCED MOTION ACCESSIBILITY
+   13. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -444,4 +506,5 @@ body::after {
     .social-button {
         transition: none;
     }
+
 }
