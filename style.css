@@ -61,7 +61,7 @@ body::before {
    3. LIGHT MODE
 ========================================= */
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
 
     body {
         color: #202020;
@@ -92,14 +92,14 @@ body::before {
         border-color: rgba(0, 0, 0, 0.85);
     }
 
-}
+} */
 
 
 /* =========================================
    4. DARK MODE
 ========================================= */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
 
     body {
         color: #ffffff;
@@ -130,7 +130,7 @@ body::before {
         border-color: rgba(255, 255, 255, 0.9);
     }
 
-}
+} */
 
 
 /* =========================================
