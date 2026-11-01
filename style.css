@@ -11,6 +11,8 @@
 html {
     min-height: 100%;
     scroll-behavior: smooth;
+
+    color-scheme: light;
 }
 
 body {
@@ -26,10 +28,11 @@ body {
         Arial,
         sans-serif;
 
-    color: #ffffff;
+    color: #000000 !important;
+
     line-height: 1.7;
 
-    background: #10141c;
+    background: transparent;
 
     position: relative;
     isolation: isolate;
@@ -49,10 +52,14 @@ body::before {
     z-index: -1;
 
     background-image: url("mucoverpage.jpg");
+
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+
+/* No overlay or background filter */
 
 
 /* =========================================
@@ -68,7 +75,7 @@ body::before {
 
     margin: 0 auto;
 
-    padding: 65px 35px 25px;
+    padding: 65px 35px 20px;
 
     display: flex;
     flex-direction: column;
@@ -107,10 +114,10 @@ body::before {
 
     border-radius: 50%;
 
-    border: 3px solid rgba(255, 255, 255, 0.85);
+    border: 3px solid #000000;
 
     box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.35);
+        0 5px 18px rgba(0, 0, 0, 0.16);
 
     margin-bottom: 22px;
 }
@@ -125,6 +132,8 @@ body::before {
     line-height: 1.3;
 
     margin-bottom: 10px;
+
+    color: #000000 !important;
 }
 
 .tagline {
@@ -134,7 +143,7 @@ body::before {
 
     letter-spacing: 1px;
 
-    color: rgba(255, 255, 255, 0.85);
+    color: #000000 !important;
 }
 
 
@@ -143,13 +152,14 @@ body::before {
 ========================================= */
 
 .about-section {
-    padding: 30px 34px;
+    padding: 20px 10px;
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 
     background: transparent;
 
     border: none;
+
     border-radius: 0;
 
     backdrop-filter: none;
@@ -165,6 +175,8 @@ body::before {
     letter-spacing: 0.5px;
 
     margin-bottom: 18px;
+
+    color: #000000 !important;
 }
 
 .about-section p {
@@ -172,7 +184,7 @@ body::before {
 
     font-weight: 400;
 
-    color: rgba(255, 255, 255, 0.91);
+    color: #000000 !important;
 
     margin-bottom: 15px;
 
@@ -191,7 +203,7 @@ body::before {
 .social-section {
     text-align: center;
 
-    margin-top: 45px;
+    margin-top: 35px;
 }
 
 .social-section h2 {
@@ -206,11 +218,11 @@ body::before {
 
     flex-wrap: wrap;
 
-    gap: 10px;
+    gap: 11px;
 }
 
 .social-button {
-    min-width: 95px;
+    min-width: 94px;
 
     display: inline-flex;
 
@@ -221,23 +233,27 @@ body::before {
 
     padding: 8px 13px;
 
-    color: #ffffff;
+    color: #000000 !important;
 
     text-decoration: none;
 
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 600;
 
-    background: rgba(255, 255, 255, 0.08);
-
-    border: 1px solid rgba(255, 255, 255, 0.30);
+    border: 1px solid rgba(0, 0, 0, 0.13);
 
     border-radius: 7px;
 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+
     transition:
         background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.social-button span {
+    color: #000000 !important;
 }
 
 .social-button svg {
@@ -247,16 +263,69 @@ body::before {
     flex-shrink: 0;
 }
 
+
+/* Individual brand-inspired backgrounds */
+
+.email-button {
+    background: #f0f0f0;
+}
+
+.email-button svg {
+    color: #555555;
+}
+
+.youtube-button {
+    background: #ffe8e8;
+}
+
+.youtube-button svg {
+    color: #ff0000;
+}
+
+.linkedin-button {
+    background: #e5f1fa;
+}
+
+.linkedin-button svg {
+    color: #0a66c2;
+}
+
+.x-button {
+    background: #eeeeee;
+}
+
+.x-button svg {
+    color: #000000;
+}
+
+
+/* Hover effects */
+
 .social-button:hover {
-    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-3px);
 
-    border-color: rgba(255, 255, 255, 0.75);
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.12);
+}
 
-    transform: translateY(-2px);
+.email-button:hover {
+    background: #e0e0e0;
+}
+
+.youtube-button:hover {
+    background: #ffd5d5;
+}
+
+.linkedin-button:hover {
+    background: #d3e8f8;
+}
+
+.x-button:hover {
+    background: #dddddd;
 }
 
 .social-button:focus-visible {
-    outline: 2px solid #ffffff;
+    outline: 2px solid #000000;
     outline-offset: 4px;
 }
 
@@ -268,7 +337,7 @@ body::before {
 .footer {
     width: 100%;
 
-    margin-top: 75px;
+    margin-top: 65px;
 
     display: flex;
 
@@ -281,9 +350,13 @@ body::before {
 .footer-dates {
     font-size: 10px;
 
-    line-height: 1.9;
+    line-height: 1.8;
 
-    color: rgba(255, 255, 255, 0.78);
+    color: #000000 !important;
+}
+
+.footer-dates p {
+    color: #000000 !important;
 }
 
 .signature-container {
@@ -296,12 +369,12 @@ body::before {
 .signature {
     display: block;
 
-    width: 80px;
+    width: 75px;
     height: auto;
 
     object-fit: contain;
 
-    opacity: 0.90;
+    opacity: 1;
 }
 
 
@@ -312,7 +385,7 @@ body::before {
 @media (max-width: 768px) {
 
     .page-container {
-        padding: 55px 25px 22px;
+        padding: 55px 25px 20px;
     }
 
     .profile-section {
@@ -325,11 +398,11 @@ body::before {
     }
 
     .about-section {
-        padding: 25px;
+        padding: 18px 8px;
     }
 
     .footer {
-        margin-top: 60px;
+        margin-top: 55px;
     }
 }
 
@@ -341,7 +414,7 @@ body::before {
 @media (max-width: 480px) {
 
     .page-container {
-        padding: 40px 18px 20px;
+        padding: 40px 18px 18px;
     }
 
     .profile-section {
@@ -365,9 +438,9 @@ body::before {
     }
 
     .about-section {
-        padding: 22px 19px;
+        padding: 15px 3px;
 
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
     .about-section h2,
@@ -382,19 +455,19 @@ body::before {
     }
 
     .social-section {
-        margin-top: 35px;
+        margin-top: 30px;
     }
 
     .social-links {
-        gap: 10px;
+        gap: 9px;
     }
 
     .social-button {
-        min-width: 90px;
+        min-width: 85px;
 
         padding: 8px 11px;
 
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .social-button svg {
@@ -403,7 +476,7 @@ body::before {
     }
 
     .footer {
-        margin-top: 55px;
+        margin-top: 45px;
 
         align-items: flex-end;
     }
@@ -413,13 +486,41 @@ body::before {
     }
 
     .signature {
-        width: 65px;
+        width: 60px;
     }
 }
 
 
 /* =========================================
-   11. REDUCED MOTION ACCESSIBILITY
+   11. DARK MODE OVERRIDE
+========================================= */
+
+/* Keep the same appearance even in dark mode */
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        color: #000000 !important;
+        background: transparent;
+    }
+
+    .profile-section h1,
+    .tagline,
+    .about-section h2,
+    .about-section p,
+    .social-section h2,
+    .social-button,
+    .social-button span,
+    .footer-dates,
+    .footer-dates p {
+        color: #000000 !important;
+    }
+
+}
+
+
+/* =========================================
+   12. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
