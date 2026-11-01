@@ -33,7 +33,7 @@ body {
     position: relative;
     isolation: isolate;
 
-    color-scheme: light dark;
+    color-scheme: light;
     color: #000000;
 }
 
@@ -59,83 +59,33 @@ body::before {
 
 
 /* =========================================
-   3. LIGHT MODE
+   3. FIXED BLACK TEXT COLOUR
 ========================================= */
 
-/* @media (prefers-color-scheme: light) {
+body,
+.profile-section h1,
+.about-section h2,
+.social-section h2,
+.tagline,
+.about-section p,
+.footer-dates,
+.social-button {
+    color: #000000;
+}
 
-    body {
-        color: #202020;
-    }
+.social-button {
+    border-color: rgba(0, 0, 0, 0.45);
+    background: transparent;
+}
 
-    .profile-section h1,
-    .about-section h2,
-    .social-section h2 {
-        color: #171717;
-        text-shadow: 0 1px 5px rgba(255, 255, 255, 0.45);
-    }
-
-    .tagline,
-    .about-section p,
-    .footer-dates {
-        color: #292929;
-        text-shadow: 0 1px 4px rgba(255, 255, 255, 0.55);
-    }
-
-    .social-button {
-        color: #202020;
-        border-color: rgba(0, 0, 0, 0.45);
-        background: transparent;
-    }
-
-    .social-button:hover {
-        background: rgba(255, 255, 255, 0.22);
-        border-color: rgba(0, 0, 0, 0.85);
-    }
-
-} */
+.social-button:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(0, 0, 0, 0.85);
+}
 
 
 /* =========================================
-   4. DARK MODE
-========================================= */
-
-/* @media (prefers-color-scheme: dark) {
-
-    body {
-        color: #ffffff;
-    }
-
-    .profile-section h1,
-    .about-section h2,
-    .social-section h2 {
-        color: #ffffff;
-        text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
-    }
-
-    .tagline,
-    .about-section p,
-    .footer-dates {
-        color: #f2f2f2;
-        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-    }
-
-    .social-button {
-        color: #ffffff;
-        border-color: rgba(255, 255, 255, 0.55);
-        background: transparent;
-    }
-
-    .social-button:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: rgba(255, 255, 255, 0.9);
-    }
-
-} */
-
-
-/* =========================================
-   5. MAIN PAGE CONTAINER
+   4. MAIN PAGE CONTAINER
 ========================================= */
 
 .page-container {
@@ -155,7 +105,7 @@ body::before {
 
 
 /* =========================================
-   6. MAIN CONTENT
+   5. MAIN CONTENT
 ========================================= */
 
 .main-content {
@@ -169,7 +119,7 @@ body::before {
 
 
 /* =========================================
-   7. PROFILE SECTION
+   6. PROFILE SECTION
 ========================================= */
 
 .profile-section {
@@ -215,7 +165,7 @@ body::before {
 
 
 /* =========================================
-   8. ABOUT SECTION
+   7. ABOUT SECTION
 ========================================= */
 
 .about-section {
@@ -258,7 +208,7 @@ body::before {
 
 
 /* =========================================
-   9. SOCIAL MEDIA SECTION
+   8. SOCIAL MEDIA SECTION
 ========================================= */
 
 .social-section {
@@ -324,7 +274,6 @@ body::before {
     flex-shrink: 0;
 }
 
-
 .social-button:hover {
     transform: translateY(-2px);
 }
@@ -336,7 +285,7 @@ body::before {
 
 
 /* =========================================
-   10. FOOTER
+   9. FOOTER
 ========================================= */
 
 .footer {
@@ -384,7 +333,7 @@ body::before {
 
 
 /* =========================================
-   11. TABLET RESPONSIVENESS
+   10. TABLET RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 768px) {
@@ -410,7 +359,7 @@ body::before {
 
 
 /* =========================================
-   12. MOBILE RESPONSIVENESS
+   11. MOBILE RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 480px) {
@@ -495,7 +444,7 @@ body::before {
 
 
 /* =========================================
-   13. REDUCED MOTION ACCESSIBILITY
+   12. REDUCED MOTION ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
