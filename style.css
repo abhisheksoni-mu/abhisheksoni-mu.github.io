@@ -136,41 +136,24 @@ body::before {
     justify-content: center;
     align-items: center;
 
-    min-width: 94px;
-    padding: 8px 13px;
+    width: 32px;
+    height: 32px;
 
-    border-radius: 8px;
     text-decoration: none;
+    border-radius: 8px;
 
-    font-size: 12px;
-    font-weight: 600;
+    transition: transform 0.2s ease;
+}
 
-    color: #000000 !important;
-
-    transition: transform 0.2s ease,
-                background-color 0.2s ease;
+.social-button img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
 }
 
 .social-button:hover {
     transform: translateY(-2px);
-}
-
-/* Individual button backgrounds */
-
-.mail-button {
-    background: rgba(255, 255, 255, 0.75);
-}
-
-.linkedin-button {
-    background: rgba(10, 102, 194, 0.13);
-}
-
-.x-button {
-    background: rgba(100, 100, 100, 0.13);
-}
-
-.youtube-button {
-    background: rgba(255, 0, 0, 0.11);
 }
 
 
@@ -186,7 +169,7 @@ body::before {
 }
 
 .footer-dates {
-    font-size: 10px;
+    font-size: 8px;
     color: #000000 !important;
     line-height: 1.8;
 }
@@ -219,7 +202,6 @@ body::before {
     .about-section h2,
     .about-section p,
     .social-section h2,
-    .social-button,
     .footer-dates,
     .footer-dates p {
         color: #000000 !important;
@@ -286,13 +268,17 @@ body::before {
     }
 
     .social-button {
-        min-width: 85px;
-        padding: 8px 11px;
-        font-size: 11px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-button img {
+        width: 19px;
+        height: 19px;
     }
 
     .footer-dates {
-        font-size: 9px;
+        font-size: 7px;
     }
 
     .signature {
